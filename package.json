@@ -1,0 +1,21 @@
+{
+   "name": "github",
+   "version": "0.0.1",
+   "scripts": {
+      "dev": "next",
+      "build": "next build",
+      "start": "next start"
+   },
+   "dependencies": {
+      "next": "latest",
+      "react": "^15.5.4",
+      "react-dom": "^15.5.4",
+      "react-redux": "^5.0.4",
+      "redux": "*"
+   },
+   "devDependencies": {
+      "@types/react": "^15.0.1",
+      "@types/react-dom": "*",
+      "@types/redux": "*"
+   }
+}
