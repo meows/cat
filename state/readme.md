@@ -1,4 +1,4 @@
-#  Table of Contents
+#   Table of Contents
 
 * actions    - functions that create actions
 * dispatcher - functions that dispatch to store
