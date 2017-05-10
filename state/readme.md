@@ -1,10 +1,10 @@
 #  Table of Contents
 
-* action     - functions that create actions
+* actions    - functions that create actions
 * dispatcher - functions that dispatch to store
 * observer   - functions that observers the store
-* reducer    - functions that interpret actions and define the store
-* store      - the Redux store
+* reducers   - functions that interpret actions and define the store
+* store      - the Redux store with reducer + observer
 * types      - string constants that provide Action types
 
 ##  System Description
