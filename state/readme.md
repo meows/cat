@@ -10,5 +10,5 @@
 ##  System Description
 
 ``` javascript
-event -> dispatcher(action) -> reducer(action) -> store -> observer(store)
+event -> dispatcher(Action) -> reducer(Action) -> store -> observer(store)
 ```
