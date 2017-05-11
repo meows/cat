@@ -11,21 +11,26 @@ function $Input({ onClick }) {
 }
 
 class Input extends React.Component {
-   state = ''
-
-   constructor(props) { super(props) }
-
-   render() {
-      return <input
-         value={this.state}
-         onChange={this.update}
-      />
+   constructor(props) {
+      super(props)
+      this.state = {
+         input: ''
+      }
    }
 
-   componentWillUnmount() { this.state = '' }
+   render() {
+      return (
+         <input
+            value={this.state.input}
+            onChange={this.update}
+         />
+      )
+   }
 
    update(event) {
-      this.setState(event.target.value)
+      this.setState({
+         input: (event.target.value)
+      })
    }
 }
 

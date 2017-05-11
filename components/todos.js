@@ -1,9 +1,9 @@
 import React from 'react'
 
 // Todo :: (Todo, integer) -> JSX
-function Todo({ todo, key}) {
+function Todo({ todo }) {
    return (
-      <li class='Todo' key={key} onClick={() => {}}>{todo}</li>
+      <li className='Todo'>{todo.task}</li>
    )
 }
 

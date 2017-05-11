@@ -13,7 +13,7 @@ const onClick = () => document.getElementById('Form')
 function Form() {
    return (
       <form id='Form'>
-         <Input onClick={() => dispatch(A.addTodo('meow'))} />
+         <Input />
          <Todos todos={DATA}/>
       </form>
    )
