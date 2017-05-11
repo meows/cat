@@ -7,6 +7,8 @@ import dispatch  from '../state/dispatcher'
 
 import DATA from '../state/data'
 
+const onClick = () => document.getElementById('Form')
+
 // Form :: () -> JSX
 function Form() {
    return (
