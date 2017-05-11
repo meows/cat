@@ -20,3 +20,13 @@ function Form() {
 }
 
 export default Form
+
+const meow = new class {
+   constructor(name) {
+      this.kitty = name
+   }
+
+   report() {
+      console.log(this.kitty)
+   }
+}('kitty')
