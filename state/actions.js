@@ -35,6 +35,11 @@ class Actions {
                type: T.VIEW_DONE,
                data: null,
             }
+         case T.VIEW_ALL:
+            return {
+               type: T.VIEW_ALL,
+               data: null,
+            }   
          default:
             throw new TypeError(`goSee() received: ${view}`)
       }
