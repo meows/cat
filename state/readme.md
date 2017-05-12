@@ -11,5 +11,5 @@
 ##  System Description
 
 ``` javascript
-event -> dispatcher(actions(data) ->  { Action }) -> reducer({ Action }) -> store -> observer(store)
+event -> dispatcher(actions(data) ->  { Action }) -> reducer({ Action }) -> store -> observer(store) -> React(derived(store))
 ```
