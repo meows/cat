@@ -27,8 +27,8 @@ class Input extends React.Component {
       )
    }
 
-   update(event) {
-      this.setState({
+   update = (event) => {
+      return this.setState({
          input: (event.target.value)
       })
    }
