@@ -14,14 +14,22 @@ function $Input({ onClick }) {
 }
 
 class Input extends React.Component {
+   state = {
+      input: ''
+   }
+   
    constructor(props) {
       super(props)
-      this.state = {
-         input: '',
-      }
    }
 
-   addTodo = (state = this.state) => dispatch(A.addTodo(state.input))
+   render() {
+      return (
+         <input
+            value={this.state.input}
+            onChange={this.update}
+         />
+      )
+   }
 
    update = (event) => {
       return this.setState({
@@ -29,18 +37,7 @@ class Input extends React.Component {
       })
    }
 
-   render() {
-      return (
-         <form>
-            <input
-               value={this.state.input}
-               onChange={this.update}
-            />
-
-            <button onClick={this.addTodo}>Add Todo</button>
-         </form>
-      )
-   }
+   addTodo = (state = this.state) => dispatch(A.addTodo(state))
 }
 
 export default Input
