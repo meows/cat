@@ -1,5 +1,9 @@
 import React from 'react'
 
+import dispatch from '../state/dispatcher'
+import A from '../state/actions'
+import T from '../state/types'
+
 // Input :: Fn -> JSX
 function $Input({ onClick }) {
    return (
@@ -32,6 +36,8 @@ class Input extends React.Component {
          input: (event.target.value)
       })
    }
+
+   addTodo = (state = this.state) => dispatch(A.addTodo(state))
 }
 
 export default Input
