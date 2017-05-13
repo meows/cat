@@ -14,11 +14,12 @@ function $Input({ onClick }) {
 }
 
 class Input extends React.Component {
+   state = {
+      input: ''
+   }
+   
    constructor(props) {
       super(props)
-      this.state = {
-         input: ''
-      }
    }
 
    render() {
