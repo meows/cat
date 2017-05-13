@@ -2,7 +2,6 @@ import React from 'react'
 
 import dispatch from '../state/dispatcher'
 import A from '../state/actions'
-import T from '../state/types'
 
 // Input :: Fn -> JSX
 function $Input({ onClick }) {
