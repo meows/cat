@@ -12,16 +12,14 @@ class Input extends React.Component {
       return (
          <input
             value={this.state.input}
-            onChange={this.update}
+            onChange={this.update.bind(this)}
          />
       )
    }
 
-   update = (event) => {
-      return this.setState({
-         input: event.target.value,
-      })
-   }
+   update = (event) => this.setState({
+      input: event.target.value,
+   })
 
    addTodo = (state = this.state) => dispatch(A.addTodo(state))
 }
