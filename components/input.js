@@ -5,7 +5,7 @@ import A        from '../state/actions'
 
 class Input extends React.Component {
    state = { input: '' }
-   
+
    constructor(props) { super(props) }
 
    render() {
@@ -19,7 +19,7 @@ class Input extends React.Component {
 
    update = (event) => {
       return this.setState({
-         input: (event.target.value)
+         input: event.target.value,
       })
    }
 
