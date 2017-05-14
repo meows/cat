@@ -39,7 +39,7 @@ class Actions {
             return {
                type: T.VIEW_ALL,
                data: null,
-            }   
+            }
          default:
             throw new TypeError(`goSee() received: ${view}`)
       }
