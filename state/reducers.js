@@ -1,6 +1,16 @@
 import T from './types'
 import { combineReducers } from 'redux'
 
+// -----------------------------------------------------------------------------
+// Reducers
+
+/*
+   State Shape: {
+      todos: Todo[]
+      view: string<ViewType>
+   }
+*/
+
 function viewReducer(state = T.VIEW_CURRENT, action) {
    switch (action.type) {
       case T.VIEW_CURRENT : return T.VIEW_CURRENT
