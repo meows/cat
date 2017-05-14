@@ -2,6 +2,8 @@ import React from 'react'
 
 import Input     from './input'
 import Todos     from './todos'
+import Footer    from './footer'
+
 import A         from '../state/actions'
 import dispatch  from '../state/dispatcher'
 import store     from '../state/store'
@@ -16,6 +18,7 @@ function Form({ todos }) {
       <form id='Form'>
          <Input />
          <Todos todos={todos}/>
+         <Footer />
       </form>
    )
 }
