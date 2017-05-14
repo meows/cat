@@ -4,13 +4,9 @@ import dispatch from '../state/dispatcher'
 import A        from '../state/actions'
 
 class Input extends React.Component {
-   state = {
-      input: ''
-   }
+   state = { input: '' }
    
-   constructor(props) {
-      super(props)
-   }
+   constructor(props) { super(props) }
 
    render() {
       return (
