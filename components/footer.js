@@ -9,11 +9,9 @@ function Footer() {
 
    return (
       <footer>
-         <View
-            all={all}
-            current={current}
-            done={done}
-         />
+         <button type="button" onClick={all}>All</button>
+         <button type="button" onClick={current}>Current</button>
+         <button type="button" onClick={done}>Done</button>
       </footer>
    )
 }
