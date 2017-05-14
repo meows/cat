@@ -10,18 +10,26 @@ class Input extends React.Component {
 
    render() {
       return (
-         <input
-            value={this.state.input}
-            onChange={this.update.bind(this)}
-         />
+         <div>
+            <input
+               value={this.state.input}
+               onChange={this.update.bind(this)}
+            />
+
+            <button type="button" onClick={this.addTodo.bind(this)}>Submit</button>
+         </div>
       )
    }
 
-   update = (event) => setState({
+   update = (event) => this.setState({
       input: event.target.value,
    })
 
-   addTodo = (state = this.state) => dispatch(A.addTodo(state))
+   addTodo = () => {
+      const task = this.state.input
+      dispatch(A.addTodo(task))
+      this.setState({ input: '' })
+   }
 }
 
 export default Input
