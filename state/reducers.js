@@ -13,7 +13,7 @@ function todoToggle(todo) {
    return Object.assign(
       Object.create(null),
       todo,
-      { done: todo.done === true ? false : true },
+      { done: !todo.done },
    )
 }
 
