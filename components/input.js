@@ -3,16 +3,6 @@ import React from 'react'
 import dispatch from '../state/dispatcher'
 import A from '../state/actions'
 
-// Input :: Fn -> JSX
-function $Input({ onClick }) {
-   return (
-      <section id='Input'>
-         <input name='task' />
-         <button onClick={onClick} type='button'>Add Task</button>
-      </section>
-   )
-}
-
 class Input extends React.Component {
    state = {
       input: ''
