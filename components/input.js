@@ -1,7 +1,7 @@
 import React from 'react'
 
 import dispatch from '../state/dispatcher'
-import A from '../state/actions'
+import A        from '../state/actions'
 
 class Input extends React.Component {
    state = {
