@@ -1,3 +1,7 @@
+
+// -----------------------------------------------------------------------------
+// Types
+
 class Types {
    static TODO_ADD     = 'TODO_ADD'
    static TODO_DELETE  = 'TODO_DELETE'
