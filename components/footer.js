@@ -1,6 +1,7 @@
-import React from 'react'
-import T     from '../state/types'
-import A     from '../state/actions'
+import React    from 'react'
+import T        from '../state/types'
+import A        from '../state/actions'
+import dispatch from '../state/dispatcher'
 
 function Footer() {
    const all     = () => dispatch(A.goSee(T.VIEW_ALL))
