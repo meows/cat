@@ -5,7 +5,7 @@ import { combineReducers } from 'redux'
 // Reducers
 
 /*
-   State Shape: {
+   State Shape {
       todos: Todo[]
       view: string<ViewType>
    }
