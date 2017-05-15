@@ -1,7 +1,7 @@
 #   Table of Contents
 
 * actions    - functions that create actions
-* derived    - functions that derive the necessary information from the store
+* derive     - functions that derive the necessary information from the store
 * dispatcher - functions that dispatch to store
 * observer   - functions that observers the store
 * reducers   - functions that interpret actions and define the store

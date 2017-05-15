@@ -7,7 +7,7 @@ import dispatch from '../state/dispatcher'
 function Todo({ todo }) {
    return (
       <li className='Todo'>
-         {`${todo.task} (${todo.done})`}
+         {todo.task} {todo.done ?  '-- done' : null}
       </li>
    )
 }
