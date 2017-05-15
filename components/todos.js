@@ -6,9 +6,12 @@ import dispatch from '../state/dispatcher'
 
 // Todo :: (Todo, integer) -> JSX
 function Todo({ todo }) {
+   const deleteTodo = (id) => dispatch(A.deleteTodo(id))
+
    return (
       <li className='Todo'>
          {todo.task} {todo.done ?  '-- done' : null}
+         <button type="button" onClick={deleteTodo}>Delete</button>
       </li>
    )
 }
