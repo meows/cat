@@ -10,8 +10,6 @@ import store     from '../state/store'
 
 import DATA from '../state/data'
 
-const onClick = () => document.getElementById('Form')
-
 // Form :: () -> JSX
 function Form({ todos, view }) {
    return (
