@@ -2,7 +2,8 @@ import React    from 'react'
 import Form     from '../components/form'
 
 import store    from '../state/store'
-import Action   from '../state/actions'
+import A        from '../state/actions'
+import T        from '../state/types'
 import dispatch from '../state/dispatcher'
 
 /* -----------------------
@@ -13,12 +14,12 @@ import dispatch from '../state/dispatcher'
 dispatch(Action.addTodo('buy milk'))
 dispatch(Action.addTodo('do homework'))
 dispatch({
+   type: T.TODO_ADD,
    data: {
       task: 'feed dog',
       id: 13131322,
       done: true,
    },
-   type: "TODO_ADD",
 })
 
 // -----------------------------------------------------------------------------
