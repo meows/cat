@@ -11,8 +11,8 @@ import dispatch from '../state/dispatcher'
    Page  : index.js
    ----------------------- */
 
-dispatch(Action.addTodo('buy milk'))
-dispatch(Action.addTodo('do homework'))
+dispatch(A.addTodo('buy milk'))
+dispatch(A.addTodo('do homework'))
 dispatch({ type: T.TODO_ADD, data: { task: 'feed dog', id: 13131322, done: true }})
 dispatch({ type: T.TODO_ADD, data: { task: 'buy book', id: 11111111, done: true }})
 

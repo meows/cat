@@ -1,5 +1,5 @@
 import React from 'react'
-import Derive from '../state/derived'
+import Derive from '../state/derive'
 
 // Todo :: (Todo, integer) -> JSX
 function Todo({ todo }) {
