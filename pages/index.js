@@ -10,4 +10,4 @@ import Form  from '../components/form'
 // -----------------------------------------------------------------------------
 // Export
 
-export default () => <Form todos={store.getState().todos} />
+export default () => <Form state={store.getState()} />

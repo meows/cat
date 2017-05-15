@@ -1,4 +1,5 @@
 import React from 'react'
+import { visible } from '../state/derived'
 
 // Todo :: (Todo, integer) -> JSX
 function Todo({ todo }) {
@@ -8,10 +9,12 @@ function Todo({ todo }) {
 }
 
 // Todos :: []Todo -> JSX
-function Todos({ todos, view }) {
+function Todos({ state }) {
+   const { todos, view } = state
+   console.log(`Todos are: `, todos)
    return (
       <ul id='Todos'>
-         { todos.map((todo, index) => <Todo todo={todo} key={index} />) }
+         { visible(view, todos).map((todo, index) => <Todo todo={todo} key={index} />) }
       </ul>
    )
 }
