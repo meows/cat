@@ -9,7 +9,7 @@ class Derive {
          case T.VIEW_ALL     : return todos
          case T.VIEW_CURRENT : return todos.filter(todo => !todo.done)
          case T.VIEW_DONE    : return todos.filter(todo => todo.done)
-         default             : return todos
+         default             : throw new TypeError(`Derive.view() didn't receive expected string.`)
       }
    }
 }

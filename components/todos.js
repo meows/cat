@@ -5,8 +5,7 @@ import Derive from '../state/derive'
 function Todo({ todo }) {
    return (
       <li className='Todo'>
-         {todo.task}
-         {todo.done}
+         {`${todo.task} (${todo.done})`}
       </li>
    )
 }
