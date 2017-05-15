@@ -25,7 +25,7 @@ function todosReducer(state = [], action) {
    switch (action.type) {
       case T.TODO_ADD    : return state.concat(action.data)
       case T.TODO_DELETE : 
-         console.log(`state is: `, action)
+         console.log(`action is: `, action)
          return state.filter(todo => todo.id !== action.data)
       case T.TODO_TOGGLE : return state.map(todo => action.data === todo.id ? todoToggle(todo) : todo)
       default            : return state
