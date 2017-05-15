@@ -1,5 +1,5 @@
 import React from 'react'
-import { visible } from '../state/derived'
+import Derive from '../state/derived'
 
 // Todo :: (Todo, integer) -> JSX
 function Todo({ todo }) {
@@ -15,7 +15,7 @@ function Todo({ todo }) {
 function Todos({ todos, view }) {
    return (
       <ul id='Todos'>
-         { visible(todos, view).map((todo, index) => <Todo todo={todo} key={index} />) }
+         { Derive.view(todos, view).map((todo, index) => <Todo todo={todo} key={index} />) }
       </ul>
    )
 }
