@@ -3,15 +3,15 @@ import T from './types'
 // -----------------------------------------------------------------------------
 // Derived
 
-const visible = function(todos = [], view) {
-   switch (view) {
-      case T.VIEW_ALL     : return todos
-      case T.VIEW_CURRENT : return todos.filter(todo => !todo.done)
-      case T.VIEW_DONE    : return todos.filter(todo => todo.done)
-      default             : return todos
+class Derive {
+   static view(todos = [], view) {
+      switch (view) {
+         case T.VIEW_ALL     : return todos
+         case T.VIEW_CURRENT : return todos.filter(todo => !todo.done)
+         case T.VIEW_DONE    : return todos.filter(todo => todo.done)
+         default             : return todos
+      }
    }
 }
 
-export {
-   visible,
-}
+export default Derive
