@@ -27,6 +27,7 @@ class Input extends React.Component {
 
    addTodo = () => {
       const task = this.state.input
+
       dispatch(A.addTodo(task))
       this.setState({ input: '' })
    }
