@@ -13,11 +13,11 @@ import DATA from '../state/data'
 const onClick = () => document.getElementById('Form')
 
 // Form :: () -> JSX
-function Form({ state }) {
+function Form({ todos, view }) {
    return (
       <form id='Form'>
          <Input />
-         <Todos state={state} />
+         <Todos todos={todos} view={view} />
          <Footer />
       </form>
    )
