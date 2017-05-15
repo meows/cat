@@ -10,7 +10,7 @@ import store     from '../state/store'
 
 import DATA from '../state/data'
 
-// Form :: () -> JSX
+// Form :: ({ Todo[], ViewType }) -> JSX
 function Form({ todos, view }) {
    return (
       <form id='Form'>
