@@ -12,10 +12,10 @@ function Todo({ todo }) {
 }
 
 // Todos :: []Todo -> JSX
-function Todos({ todos }) {
+function Todos({ todos, view }) {
    return (
       <ul id='Todos'>
-         { todos.map((todo, index) => <Todo todo={todo} key={index} />) }
+         { visible(todos, view).map((todo, index) => <Todo todo={todo} key={index} />) }
       </ul>
    )
 }
