@@ -2,6 +2,7 @@ import React from 'react'
 
 import Derive   from '../state/derive'
 import A        from '../state/actions'
+import T        from '../state/types'
 import dispatch from '../state/dispatcher'
 
 // Todo :: (Todo, integer) -> JSX
@@ -20,6 +21,11 @@ function Todos({ todos, view }) {
    return (
       <ul id='Todos'>
          { Derive.view(todos, view).map((todo, index) => <Todo todo={todo} key={index} />) }
+         {
+            view !== T.VIEW_DONE ? null : (
+               <button type="button" onClick={() => dispatch(A.clearDone())}>Clear Done</button>
+            )
+         }
       </ul>
    )
 }
