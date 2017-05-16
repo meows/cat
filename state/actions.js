@@ -23,6 +23,11 @@ class Actions {
       data: id,
    })
 
+   static clearDone = () => ({
+      type: T.TODO_CLEAR,
+      data: null,
+   })
+
    static goSee = (view) => {
       switch (view) {
          case T.VIEW_CURRENT:
