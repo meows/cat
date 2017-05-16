@@ -6,12 +6,12 @@ import T        from '../state/types'
 import dispatch from '../state/dispatcher'
 
 // Todo :: (Todo, integer) -> JSX
-function Todo({ todo }) {
+function Todo({ todo:{task, id, done} }) {
    return (
       <li className='Todo'>
-         {`${todo.task} ${todo.done ?  '-- done' : ''}`}
-         <button type="button" onClick={() => dispatch(A.toggleTodo(todo.id))}>Toggle</button>
-         <button type="button" onClick={() => dispatch(A.deleteTodo(todo.id))}>Delete</button>
+         {`${task} ${done ?  '-- done' : ''}`}
+         <button type="button" onClick={() => dispatch(A.toggleTodo(id))}>Toggle</button>
+         <button type="button" onClick={() => dispatch(A.deleteTodo(id))}>Delete</button>
       </li>
    )
 }
