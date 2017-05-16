@@ -5,11 +5,11 @@ import Todos     from './todos'
 import Footer    from './footer'
 
 // Form :: ({ Todo[], ViewType }) -> JSX
-function Form({ todos, view }) {
+function Form() {
    return (
       <form id='Form'>
          <Input />
-         <Todos todos={todos} view={view} />
+         <Todos />
          <Footer />
       </form>
    )

@@ -10,7 +10,7 @@ const observer = (state = store.getState()) => {
 
    console.log(`Δstate :: `, state)
 
-   ReactDOM.render(<Form todos={todos} view={view} />, document.body)
+   ReactDOM.render(<Form todos={todos} view={view} />, document.getElementById('App'))
 }
 
 export default observer
