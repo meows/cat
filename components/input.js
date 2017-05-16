@@ -11,11 +11,7 @@ class Input extends React.Component {
    render() {
       return (
          <div>
-            <input
-               value={this.state.input}
-               onChange={this.update.bind(this)}
-            />
-
+            <input value={this.state.input} onChange={this.update.bind(this)} />
             <button type="button" onClick={this.addTodo.bind(this)}>Submit</button>
          </div>
       )
