@@ -9,7 +9,7 @@ import dispatch from '../state/dispatcher'
 function Todo({ todo }) {
    return (
       <li className='Todo'>
-         {`${todo.task} ${todo.done ?  '-- done' : ''} ${todo.id}`}
+         {`${todo.task} ${todo.done ?  '-- done' : ''}`}
          <button type="button" onClick={() => dispatch(A.toggleTodo(todo.id))}>Toggle</button>
          <button type="button" onClick={() => dispatch(A.deleteTodo(todo.id))}>Delete</button>
       </li>
