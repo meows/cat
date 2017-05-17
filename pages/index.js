@@ -1,5 +1,5 @@
 import React    from 'react'
-import Form     from '../components/form'
+import RootView from '../components/RootView'
 
 import store    from '../state/store'
 import A        from '../state/actions'
@@ -15,10 +15,4 @@ console.log(`state initial :: `, store.getState())
 // -----------------------------------------------------------------------------
 // Export
 
-export default () => {
-   return (
-      <div id='App'>
-         <Form />
-      </div>
-   )
-}
+export default RootView

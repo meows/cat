@@ -17,18 +17,14 @@ function Todo({ todo: {task, id, done}}) {
    )
 }
 
-// Todos :: []Todo -> JSX
-function Todos() {
-   const { todos, view } = store.getState()
-   const derived_todos  = Derive.view(todos, view)
-   const is_todos_empty = derived_todos.length === 0
-   const is_view_done   = view === T.VIEW_DONE
-
+// Todos :: ([]Todo, ViewType) -> JSX
+function Todos({ todos, view }) {
+   const derived  = Derive.view(todos, view)
    return (
       <ul id='Todos'>
-         { derived_todos.map((todo, index) => <Todo todo={todo} key={index} />) }
+         { derived.map((todo, index) => <Todo todo={todo} key={index} />) }
          {
-            (is_view_done) && (!is_todos_empty) ? (
+            (view === T.VIEW_DONE && derived.length !== 0) ? (
                <button type="button" onClick={() => dispatch(A.clearDone())}>Clear Done</button>
             ) : null
          }

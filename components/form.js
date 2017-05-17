@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Input     from './input'
-import Todos     from './todos'
-import Footer    from './footer'
+import Input  from './input'
+import Todos  from './todos'
+import Footer from './footer'
 
 // Form :: ({ Todo[], ViewType }) -> JSX
 function Form() {

@@ -1,16 +1,15 @@
 import ReactDOM from 'react-dom'
 import store    from './store'
 import Form     from '../components/form'
+import RootView from '../components/RootView'
 
 // -----------------------------------------------------------------------------
 // Observer
 
-const observer = (state = store.getState()) => {
-   const { todos, view } = state
+const observer = () => {
+   console.log(`Δstate :: `, store.getState())
 
-   console.log(`Δstate :: `, state)
-
-   ReactDOM.render(<Form todos={todos} view={view} />, document.getElementById('App'))
+   ReactDOM.render(<RootView />, document.getElementById('RootView'))
 }
 
 export default observer
