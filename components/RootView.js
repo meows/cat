@@ -1,9 +1,9 @@
 import React from 'react'
 import store from '../state/store'
 
-import Input  from './input'
-import Todos  from './todos'
-import Footer from './footer'
+import Input  from './Input'
+import Todos  from './Todos'
+import Footer from './Footer'
 
 const RootView = function() {
    const { todos, view } = store.getState()

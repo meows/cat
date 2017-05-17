@@ -1,4 +1,5 @@
-import React from 'react'
+import React     from 'react'
+import PropTypes from 'prop-types'
 
 import Derive   from '../state/derive'
 import A        from '../state/actions'
@@ -32,8 +33,20 @@ function Todos({ todos, view }) {
    )
 }
 
+Todos.propTypes = {
+   todos: PropTypes.array.isRequired,
+   view: PropTypes.string.isRequired,
+}
+
 const mapStateToProps = (state) => ({
    todos: Derive.todoVisibility(state.todos, state.view),
+})
+
+const mapDispatchToProps = (dispatch) => ({
+   todoToggle: (id) => dispatch({
+      type: T.TODO_TOGGLE,
+      data: id,
+   })
 })
 
 export default Todos
