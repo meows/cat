@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import store    from './store'
-import Form     from '../components/form'
+import Form     from '../components/Form'
 import RootView from '../components/RootView'
 
 // -----------------------------------------------------------------------------
