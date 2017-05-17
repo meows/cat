@@ -18,9 +18,11 @@ function Todo({ todo: {task, id, done}}) {
 
 // Todos :: ([]Todo, ViewType) -> JSX
 function Todos({ todos, view }) {
+   const derived = Derive.todoVisibility(todos, view)
+
    return (
       <ul id='Todos'>
-         { Derive(todos, view).map((todo, index) => <Todo todo={todo} key={index} />) }
+         { derived.map((todo, index) => <Todo todo={todo} key={index} />) }
          {
             (view === T.VIEW_DONE && derived.length !== 0) ? (
                <button type="button" onClick={() => Dispatch(A.clearDone())}>Clear Done</button>
@@ -29,5 +31,9 @@ function Todos({ todos, view }) {
       </ul>
    )
 }
+
+const mapStateToProps = (state) => ({
+   todos: Derive.todoVisibility(state.todos, state.view),
+})
 
 export default Todos
