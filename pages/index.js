@@ -15,4 +15,8 @@ console.log(`state initial :: `, store.getState())
 // -----------------------------------------------------------------------------
 // Export
 
-export default RootView
+export default () => (
+   <div id='RootView'>
+      <RootView />
+   </div>
+)
