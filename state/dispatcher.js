@@ -11,6 +11,7 @@ class Dispatchers {
    static todoToggle = (id)   => dispatch(A.toggleTodo(id))
    static todoDelete = (id)   => dispatch(A.toggleTodo(id))
    static goSee      = (view) => dispatch(A.goSee(view))
+   static clearDone  = ()     => dispatch(A.clearDone())
 }
 
 export default dispatch
