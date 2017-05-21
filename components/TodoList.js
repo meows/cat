@@ -26,11 +26,9 @@ function Todos({ todos }) {
    )
 }
 
-const mapDerivedStateToProps = (state) => ({
+const mapState = (state) => ({
    todos : Derive.todoVisibility(state.todos, state.view),
    view  : state.view,
 })
 
-const TodoList = connect(mapDerivedStateToProps)(Todos)
-
-export default TodoList
+export default connect(mapState)(Todos)
