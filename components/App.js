@@ -1,6 +1,17 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 
-const App = () => {
-   this.props.children
+import Input    from './Input'
+import TodoList from './TodoList'
+import Footer   from './Footer'
+
+function App() {
+   return (
+      <form id='Form'>
+         <Input />
+         <TodoList />
+         <Footer />
+      </form>
+   )
 }
+
+export default App

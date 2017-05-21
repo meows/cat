@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom'
 import store    from './store'
 import Form     from '../components/Form'
-import RootView from '../components/RootView'
+import App      from '../components/App'
+import { Provider } from 'react-redux'
 
 // -----------------------------------------------------------------------------
 // Observer
@@ -9,7 +10,12 @@ import RootView from '../components/RootView'
 const observer = () => {
    console.log(`Δstate :: `, store.getState())
 
-   ReactDOM.render(<RootView />, document.getElementById('RootView'))
+   ReactDOM.render(
+      <Provider store={store}>
+         <App />
+      </Provider>,
+
+      document.getElementById('RootView'))
 }
 
 export default observer

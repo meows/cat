@@ -6,8 +6,9 @@ import A        from '../state/actions'
 import T        from '../state/types'
 import Dispatch from '../state/dispatcher'
 
-// Todo :: (Todo, integer) -> JSX
-function Todo({ todo: {task, id, done}}) {
+function Todo({ todo }) {
+   const { task, id, done } = todo
+
    return (
       <li className='Todo'>
          {`${task} ${done ?  '-- done' : ''}`}
@@ -17,8 +18,7 @@ function Todo({ todo: {task, id, done}}) {
    )
 }
 
-// Todos :: ([]Todo, ViewType) -> JSX
-function Todos({ todos, view }) {
+function Todos({ todos }) {
    return (
       <ul id='Todos'>
          { todos.map((todo, index) => <Todo todo={todo} key={index} />) }
@@ -33,4 +33,4 @@ const mapDerivedStateToProps = (state) => ({
 
 const TodoList = connect(mapDerivedStateToProps)(Todos)
 
-export default TodosList
+export default TodoList
