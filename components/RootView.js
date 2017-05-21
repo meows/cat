@@ -6,7 +6,6 @@ import Todos  from './Todos'
 import Footer from './Footer'
 
 const RootView = function() {
-   const { todos, view } = store.getState()
    return (
       <div id='RootView'>
          <Input />

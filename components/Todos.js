@@ -11,42 +11,26 @@ function Todo({ todo: {task, id, done}}) {
    return (
       <li className='Todo'>
          {`${task} ${done ?  '-- done' : ''}`}
-         <button type="button" onClick={() => Dispatch(A.toggleTodo(id))}>Toggle</button>
-         <button type="button" onClick={() => Dispatch(A.deleteTodo(id))}>Delete</button>
+         <button type="button" onClick={Dispatch.todoToggle(id)}>Toggle</button>
+         <button type="button" onClick={Dispatch.todoDelete(id)}>Delete</button>
       </li>
    )
 }
 
 // Todos :: ([]Todo, ViewType) -> JSX
 function Todos({ todos, view }) {
-   const derived = Derive.todoVisibility(todos, view)
-
    return (
       <ul id='Todos'>
-         { derived.map((todo, index) => <Todo todo={todo} key={index} />) }
-         {
-            (view === T.VIEW_DONE && derived.length !== 0) ? (
-               <button type="button" onClick={() => Dispatch(A.clearDone())}>Clear Done</button>
-            ) : null
-         }
+         { todos.map((todo, index) => <Todo todo={todo} key={index} />) }
       </ul>
    )
 }
 
-Todos.propTypes = {
-   todos: PropTypes.array.isRequired,
-   view: PropTypes.string.isRequired,
-}
-
-const mapStateToProps = (state) => ({
-   todos: Derive.todoVisibility(state.todos, state.view),
+const mapDerivedStateToProps = (state) => ({
+   todos : Derive.todoVisibility(state.todos, state.view),
+   view  : state.view,
 })
 
-const mapDispatchToProps = (dispatch) => ({
-   todoToggle: (id) => dispatch({
-      type: T.TODO_TOGGLE,
-      data: id,
-   })
-})
+const TodoList = connect(mapDerivedStateToProps)(Todos)
 
-export default Todos
+export default TodosList
