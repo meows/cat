@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom'
 import store    from './store'
-import Form     from '../components/Form'
 import App      from '../components/App'
 import { Provider } from 'react-redux'
 

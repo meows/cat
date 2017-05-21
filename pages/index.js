@@ -1,4 +1,6 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+
 import App   from '../components/App'
 
 import store from '../state/store'
@@ -16,7 +18,7 @@ console.log(`state initial :: `, store.getState())
 // Export
 
 export default () => (
-   <div id='RootView'>
+   <Provider store={store}>
       <App />
-   </div>
+   </Provider>
 )

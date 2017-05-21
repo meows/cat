@@ -1,7 +1,7 @@
 import React from 'react'
 
-import dispatch from '../state/dispatcher'
-import A        from '../state/actions'
+import send from '../state/dispatcher'
+import A    from '../state/actions'
 
 class Input extends React.Component {
    state = { input: '' }
@@ -24,7 +24,7 @@ class Input extends React.Component {
    addTodo = () => {
       const task = this.state.input
 
-      dispatch(A.addTodo(task))
+      send.todoAdd(String(task))
       this.setState({ input: '' })
    }
 }

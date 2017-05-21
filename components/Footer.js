@@ -6,9 +6,9 @@ import dispatch from '../state/dispatcher'
 function Footer() {
    return (
       <footer>
-         <button type="button" onClick={dispatch.goSee(T.VIEW_ALL)}>All</button>
-         <button type="button" onClick={dispatch.goSee(T.VIEW_CURRENT)}>Current</button>
-         <button type="button" onClick={dispatch.goSee(T.VIEW_DONE)}>Done</button>
+         <button type="button" onClick={() => dispatch.goSee(T.VIEW_ALL)}>All</button>
+         <button type="button" onClick={() => dispatch.goSee(T.VIEW_CURRENT)}>Current</button>
+         <button type="button" onClick={() => dispatch.goSee(T.VIEW_DONE)}>Done</button>
       </footer>
    )
 }

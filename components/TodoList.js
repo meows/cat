@@ -1,5 +1,6 @@
-import React     from 'react'
-import PropTypes from 'prop-types'
+import React       from 'react'
+import PropTypes   from 'prop-types'
+import { connect } from 'react-redux'
 
 import Derive   from '../state/derive'
 import Dispatch from '../state/dispatcher'
@@ -7,7 +8,7 @@ import Dispatch from '../state/dispatcher'
 function Todo({ todo, todoToggle }) {
    return (
       <li className='Todo'>
-         {task} {done ?  ' (done)' : null}}
+         {todo.task} {todo.done ?  ' (done)' : null}}
          <button type="button" onClick={() => todoToggle(todo.id)}>Toggle</button>
       </li>
    )
