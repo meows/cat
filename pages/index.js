@@ -1,8 +1,8 @@
-import React    from 'react'
-import RootView from '../components/RootView'
+import React from 'react'
+import App   from '../components/App'
 
-import store    from '../state/store'
-import A        from '../state/actions'
+import store from '../state/store'
+import A     from '../state/actions'
 
 
 /* -----------------------
@@ -17,6 +17,6 @@ console.log(`state initial :: `, store.getState())
 
 export default () => (
    <div id='RootView'>
-      <RootView />
+      <App />
    </div>
 )

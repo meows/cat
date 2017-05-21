@@ -2,18 +2,13 @@ import React     from 'react'
 import PropTypes from 'prop-types'
 
 import Derive   from '../state/derive'
-import A        from '../state/actions'
-import T        from '../state/types'
 import Dispatch from '../state/dispatcher'
 
-function Todo({ todo }) {
-   const { task, id, done } = todo
-
+function Todo({ todo, todoToggle }) {
    return (
       <li className='Todo'>
-         {`${task} ${done ?  '-- done' : ''}`}
-         <button type="button" onClick={Dispatch.todoToggle(id)}>Toggle</button>
-         <button type="button" onClick={Dispatch.todoDelete(id)}>Delete</button>
+         {task} {done ?  ' (done)' : null}}
+         <button type="button" onClick={() => todoToggle(todo.id)}>Toggle</button>
       </li>
    )
 }
@@ -31,4 +26,8 @@ const mapState = (state) => ({
    view  : state.view,
 })
 
-export default connect(mapState)(Todos)
+const mapDispatch = (dispatch) => ({
+   todoToggle: Dispatch.todoToggle,
+})
+
+export default connect(mapState, mapDispatch)(Todos)
