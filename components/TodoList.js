@@ -30,4 +30,6 @@ const mapDispatch = (dispatch) => ({
    todoToggle: Dispatch.todoToggle,
 })
 
-export default connect(mapState, mapDispatch)(Todos)
+const TodoList = connect(mapState, mapDispatch)(Todos)
+
+export default TodoList
