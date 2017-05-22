@@ -1,10 +1,15 @@
-import React from 'react'
+import React       from 'react'
+import { connect } from 'react-redux'
 
 import Dispatch from '../state/dispatcher'
-import A from '../state/actions'
+import A        from '../state/actions'
+
+// -----------------------------------------------------------------------------
+// Component
 
 class Input extends React.Component {
-   state = { input: '' }
+   state    = { input: '' }
+   dispatch = this.props.dispatch
 
    constructor(props) { super(props) }
 
@@ -24,9 +29,14 @@ class Input extends React.Component {
    addTodo = () => {
       const task = this.state.input
 
-      Dispatch(A.todoAdd(task))
+      this.dispatch(A.todoAdd(task))
       this.setState({ input: '' })
    }
 }
 
-export default Input
+// -----------------------------------------------------------------------------
+// Dependencies
+
+const Connection = connect()(Input)
+
+export default Connection
