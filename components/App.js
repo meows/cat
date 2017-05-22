@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Input    from './Input'
-import TodoList from './TodoList'
-import Footer   from './Footer'
+import Input   from './Input'
+import Todos   from './Todos'
+import Footer  from './Footer'
 
 function App() {
    return (
       <form id='Form'>
          <Input />
-         <TodoList />
+         <Todos />
          <Footer />
       </form>
    )

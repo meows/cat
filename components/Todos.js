@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import Derive from '../state/derive'
 import Action from '../state/actions'
 
+// -----------------------------------------------------------------------------
+// Components
+
 function Todo({ todo, onClick }) {
    return (
       <li className='Todo'>
@@ -23,7 +26,20 @@ function Todos({ todos, onClick }) {
 }
 
 // -----------------------------------------------------------------------------
-// Store
+// React Typing
+
+Todo.PropTypes = {
+   todo: PropTypes.object.isRequired,
+   onClick: PropTypes.func.isRequired,
+}
+
+Todos.PropTypes = {
+   todos: PropTypes.array.isRequired,
+   onClick: PropTypes.func.isRequired,
+}
+
+// -----------------------------------------------------------------------------
+// Store Connection
 
 const mapState = (state) => ({
    todos : Derive.todoVisibility(state.todos, state.view),

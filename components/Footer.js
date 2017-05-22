@@ -4,6 +4,8 @@ import A           from '../state/actions'
 import { connect } from 'react-redux'
 import PropTypes   from 'prop-types'
 
+// -----------------------------------------------------------------------------
+// Components
 
 function Footer({ all, current, done }) {
    return (
@@ -16,7 +18,16 @@ function Footer({ all, current, done }) {
 }
 
 // -----------------------------------------------------------------------------
-// Store
+// React Typing
+
+Footer.PropTypes = {
+   all: PropTypes.func.isRequired,
+   current: PropTypes.func.isRequired,
+   done: PropTypes.func.isRequired,
+}
+
+// -----------------------------------------------------------------------------
+// Store Connection
 
 const mapDispatch = (dispatch) => ({
    all     : () => dispatch(A.goSee(T.VIEW_ALL)),
@@ -25,10 +36,5 @@ const mapDispatch = (dispatch) => ({
 })
 
 const Connected = connect(null, mapDispatch)(Footer)
-
-// -----------------------------------------------------------------------------
-// React Typing
-
-
 
 export default Connected
