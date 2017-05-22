@@ -6,7 +6,7 @@ import A           from '../state/actions'
 // Component
 
 class Input extends React.Component {
-   state    = { input: '' }
+   state   = { input: '' }
    onClick = this.props.onClick
 
    constructor(props) { super(props) }
