@@ -10,10 +10,18 @@ import PropTypes   from 'prop-types'
 function Footer({ all, current, done }) {
    return (
       <footer>
-         <button type="button" onClick={() => all()}>All</button>
-         <button type="button" onClick={() => current()}>Current</button>
-         <button type="button" onClick={() => done()}>Done</button>
+         <button type="button" onClick={all}>All</button>
+         <button type="button" onClick={current}>Current</button>
+         <button type="button" onClick={done}>Done</button>
       </footer>
+   )
+}
+
+function Button ({ text, onClick, is_disabled }) {
+   const status = is_disabled ? 'disabled' : null
+
+   return (
+      <button type="button" onClick={onClick} disabled={status}>{text}</button>
    )
 }
 
@@ -28,6 +36,10 @@ Footer.PropTypes = {
 
 // -----------------------------------------------------------------------------
 // Store Connection
+
+const mapProps = (state) => ({
+   view: state.view,
+})
 
 const mapDispatch = (dispatch) => ({
    all     : () => dispatch(A.goSee(T.VIEW_ALL)),
