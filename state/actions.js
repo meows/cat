@@ -4,7 +4,7 @@ import T from './types'
 // Action Creators
 
 class Actions {
-   static addTodo = (task) => ({
+   static todoAdd = (task) => ({
       type: T.TODO_ADD,
       data: {
          task : task,
@@ -13,17 +13,17 @@ class Actions {
       },
    })
 
-   static deleteTodo = (id) => ({
+   static todoDelete = (id) => ({
       type: T.TODO_DELETE,
       data: id,
    })
 
-   static toggleTodo = (id) => ({
+   static todoToggle = (id) => ({
       type: T.TODO_TOGGLE,
       data: id,
    })
 
-   static clearDone = () => ({
+   static todoClear = () => ({
       type: T.TODO_CLEAR,
       data: null,
    })

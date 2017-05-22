@@ -4,20 +4,22 @@ import { connect } from 'react-redux'
 
 import Derive   from '../state/derive'
 import Dispatch from '../state/dispatcher'
+import A from '../state/actions'
+import T from '../state/types'
 
-function Todo({ todo, todoToggle }) {
+function Todo({ todo, onClick }) {
    return (
       <li className='Todo'>
-         {todo.task} {todo.done ?  ' (done)' : null}}
-         <button type="button" onClick={() => todoToggle(todo.id)}>Toggle</button>
+         {todo.task} {todo.done ?  ' (done)' : null}
+         <button type="button" onClick={() => onClick(todo.id)}>Toggle</button>
       </li>
    )
 }
 
-function Todos({ todos }) {
+function Todos({ todos, onClick }) {
    return (
       <ul id='Todos'>
-         { todos.map((todo, index) => <Todo todo={todo} key={index} />) }
+         { todos.map((todo, index) => <Todo todo={todo} onClick={onClick} key={index} />) }
       </ul>
    )
 }
@@ -28,7 +30,7 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-   todoToggle: Dispatch.todoToggle,
+   onClick: (id) => dispatch(A.todoToggle(id)),
 })
 
 const TodoList = connect(mapState, mapDispatch)(Todos)

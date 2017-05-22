@@ -14,7 +14,8 @@ const observer = () => {
          <App />
       </Provider>,
 
-      document.getElementById('RootView'))
+      document.getElementById('App')
+   )
 }
 
 export default observer

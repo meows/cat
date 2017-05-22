@@ -1,7 +1,7 @@
 import React from 'react'
 
-import send from '../state/dispatcher'
-import A    from '../state/actions'
+import Dispatch from '../state/dispatcher'
+import A from '../state/actions'
 
 class Input extends React.Component {
    state = { input: '' }
@@ -11,8 +11,8 @@ class Input extends React.Component {
    render() {
       return (
          <div>
-            <input value={this.state.input} onChange={this.update.bind(this)} />
-            <button type="button" onClick={this.addTodo.bind(this)}>Submit</button>
+            <input value={this.state.input} onChange={this.update} />
+            <button type="button" onClick={this.addTodo}>Submit</button>
          </div>
       )
    }
@@ -24,7 +24,7 @@ class Input extends React.Component {
    addTodo = () => {
       const task = this.state.input
 
-      send.todoAdd(String(task))
+      Dispatch(A.todoAdd(task))
       this.setState({ input: '' })
    }
 }

@@ -14,4 +14,4 @@ class Dispatchers {
    static goSee      = (view) => dispatch(A.goSee(view))
 }
 
-export default Dispatchers
+export default dispatch
