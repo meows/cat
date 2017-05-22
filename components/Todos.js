@@ -29,13 +29,13 @@ function Todos({ todos, onClick }) {
 // React Typing
 
 Todo.PropTypes = {
-   todo: PropTypes.object.isRequired,
-   onClick: PropTypes.func.isRequired,
+   todo    : PropTypes.object.isRequired,
+   onClick : PropTypes.func.isRequired,
 }
 
 Todos.PropTypes = {
-   todos: PropTypes.array.isRequired,
-   onClick: PropTypes.func.isRequired,
+   todos   : PropTypes.array.isRequired,
+   onClick : PropTypes.func.isRequired,
 }
 
 // -----------------------------------------------------------------------------
