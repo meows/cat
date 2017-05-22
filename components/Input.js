@@ -1,4 +1,5 @@
 import React       from 'react'
+import PropTypes   from 'prop-types'
 import { connect } from 'react-redux'
 import A           from '../state/actions'
 
@@ -31,6 +32,13 @@ class Input extends React.Component {
       this.onClick(task)
       this.setState({ input: '' })
    }
+}
+
+// ----------------------------------------------------------------------------
+// React Typing
+
+Input.PropTypes = {
+   onClick: PropTypes.func.isRequired,
 }
 
 // -----------------------------------------------------------------------------
