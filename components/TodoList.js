@@ -2,10 +2,8 @@ import React       from 'react'
 import PropTypes   from 'prop-types'
 import { connect } from 'react-redux'
 
-import Derive   from '../state/derive'
-import Dispatch from '../state/dispatcher'
-import A from '../state/actions'
-import T from '../state/types'
+import Derive from '../state/derive'
+import Action from '../state/actions'
 
 function Todo({ todo, onClick }) {
    return (
@@ -24,15 +22,18 @@ function Todos({ todos, onClick }) {
    )
 }
 
+// -----------------------------------------------------------------------------
+// Store
+
 const mapState = (state) => ({
    todos : Derive.todoVisibility(state.todos, state.view),
    view  : state.view,
 })
 
 const mapDispatch = (dispatch) => ({
-   onClick: (id) => dispatch(A.todoToggle(id)),
+   onClick: (id) => dispatch(Action.todoToggle(id)),
 })
 
-const TodoList = connect(mapState, mapDispatch)(Todos)
+const Connected = connect(mapState, mapDispatch)(Todos)
 
-export default TodoList
+export default Connected

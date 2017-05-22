@@ -1,20 +1,34 @@
-import React    from 'react'
-import T        from '../state/types'
-import A        from '../state/actions'
-import Dispatch from '../state/dispatcher'
+import React       from 'react'
+import T           from '../state/types'
+import A           from '../state/actions'
+import { connect } from 'react-redux'
+import PropTypes   from 'prop-types'
+
 
 function Footer({ all, current, done }) {
    return (
       <footer>
-         <button type="button" onClick={() => Dispatch(A.goSee(T.VIEW_ALL))}>All</button>
-         <button type="button" onClick={() => Dispatch(A.goSee(T.VIEW_CURRENT))}>Current</button>
-         <button type="button" onClick={() => Dispatch(A.goSee(T.VIEW_DONE))}>Done</button>
+         <button type="button" onClick={() => all()}>All</button>
+         <button type="button" onClick={() => current()}>Current</button>
+         <button type="button" onClick={() => done()}>Done</button>
       </footer>
    )
 }
 
-const mapDispatch = () => ({
+// -----------------------------------------------------------------------------
+// Store
 
+const mapDispatch = (dispatch) => ({
+   all     : () => dispatch(A.goSee(T.VIEW_ALL)),
+   current : () => dispatch(A.goSee(T.VIEW_CURRENT)),
+   done    : () => dispatch(A.goSee(T.VIEW_DONE)),
 })
 
-export default Footer
+const Connected = connect(null, mapDispatch)(Footer)
+
+// -----------------------------------------------------------------------------
+// React Typing
+
+
+
+export default Connected
