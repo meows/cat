@@ -8,13 +8,11 @@ import PropTypes   from 'prop-types'
 // Components
 
 function Footer({ all, current, done, view }) {
-
    return (
       <footer>
          <button type="button" onClick={all}>All</button>
          <button type="button" onClick={current}>Current</button>
          <button type="button" onClick={done}>Done</button>
-         <Button text="Hello All" onClick={all} disabled={true} />
       </footer>
    )
 }
@@ -34,6 +32,7 @@ Footer.PropTypes = {
    all     : PropTypes.func.isRequired,
    current : PropTypes.func.isRequired,
    done    : PropTypes.func.isRequired,
+   view    : PropTypes.string.isRequired,
 }
 
 // -----------------------------------------------------------------------------
