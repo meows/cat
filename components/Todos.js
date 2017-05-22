@@ -39,7 +39,7 @@ Todos.PropTypes = {
 }
 
 // -----------------------------------------------------------------------------
-// Store Connection
+// Connection
 
 const mapState = (state) => ({
    todos : Derive.todoVisibility(state.todos, state.view),

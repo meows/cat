@@ -1,15 +1,13 @@
 import React       from 'react'
 import { connect } from 'react-redux'
-
-import Dispatch from '../state/dispatcher'
-import A        from '../state/actions'
+import A           from '../state/actions'
 
 // -----------------------------------------------------------------------------
 // Component
 
 class Input extends React.Component {
    state    = { input: '' }
-   dispatch = this.props.dispatch
+   onClick = this.props.onClick
 
    constructor(props) { super(props) }
 
@@ -17,7 +15,7 @@ class Input extends React.Component {
       return (
          <div>
             <input value={this.state.input} onChange={this.update} />
-            <button type="button" onClick={this.addTodo}>Submit</button>
+            <button type="button" onClick={this.submit}>Submit</button>
          </div>
       )
    }
@@ -26,17 +24,22 @@ class Input extends React.Component {
       input: event.target.value,
    })
 
-   addTodo = () => {
+   submit = () => {
       const task = this.state.input
+      if (task.length === 0) { return }
 
-      this.dispatch(A.todoAdd(task))
+      this.onClick(task)
       this.setState({ input: '' })
    }
 }
 
 // -----------------------------------------------------------------------------
-// Dependencies
+// Connection
 
-const Connection = connect()(Input)
+const mapDispatch = (dispatch) => ({
+   onClick: (task) => dispatch(A.todoAdd(task))
+})
+
+const Connection = connect(null, mapDispatch)(Input)
 
 export default Connection
