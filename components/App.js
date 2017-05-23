@@ -6,11 +6,11 @@ import Footer  from './Footer'
 
 function App() {
    return (
-      <form id='Form'>
+      <div id='App'>
          <Input />
          <Todos />
          <Footer />
-      </form>
+      </div>
    )
 }
 
