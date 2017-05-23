@@ -11,7 +11,7 @@ import Action from '../state/actions'
 function Todo({ todo, onClick }) {
    return (
       <li className='Todo'>
-         {todo.task} {todo.done ?  ' (done)' : null}
+         {todo.task} {todo.done ?  ' (done) ' : null}
          <button type="button" onClick={() => onClick(todo.id)}>Toggle</button>
       </li>
    )
