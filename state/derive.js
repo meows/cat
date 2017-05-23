@@ -9,7 +9,15 @@ class Derive {
          case T.VIEW_ALL     : return todos
          case T.VIEW_CURRENT : return todos.filter(todo => !todo.done)
          case T.VIEW_DONE    : return todos.filter(todo => todo.done)
-         default             : new TypeError(`Derive.view() received wrong input: `, todos, view)
+         default             : new TypeError(`Derive.todos() received wrong input: `, todos, view)
+      }
+   }
+   static footerVisibility(view) {
+      switch (view) {
+         case T.VIEW_ALL     : return 'all'
+         case T.VIEW_CURRENT : return 'current'
+         case T.VIEW_DONE    : return 'done'
+         default             : new TypeError(`Derive.footer() received wrong input: `, view)
       }
    }
 }

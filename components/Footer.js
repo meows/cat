@@ -3,6 +3,7 @@ import T           from '../state/types'
 import A           from '../state/actions'
 import { connect } from 'react-redux'
 import PropTypes   from 'prop-types'
+import D           from '../state/derive'
 
 // -----------------------------------------------------------------------------
 // Components
@@ -12,8 +13,8 @@ function Footer({ all, current, done, view }) {
 
    return (
       <footer>
-         <button type="button" onClick={all} disabled={same(all)}>All</button>
-         <button type="button" onClick={current} disabled={same(current)}>Current</button>
+         <button type="button" onClick={all} disabled={!same(all)}>All</button>
+         <button type="button" onClick={current} disabled={!same(current)}>Current</button>
          <button type="button" onClick={done} disabled={same(done)}>Done</button>
       </footer>
    )
@@ -33,7 +34,7 @@ Footer.PropTypes = {
 // Store Connection
 
 const mapProps = (state) => ({
-   view: state.view,
+   view: D.footerVisibility(state.view),
 })
 
 const mapDispatch = (dispatch) => ({
