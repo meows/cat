@@ -8,20 +8,14 @@ import PropTypes   from 'prop-types'
 // Components
 
 function Footer({ all, current, done, view }) {
+   const same = (fn) => view === done.name ? true : false
+
    return (
       <footer>
-         <button type="button" onClick={all}>All</button>
-         <button type="button" onClick={current}>Current</button>
-         <button type="button" onClick={done}>Done</button>
+         <button type="button" onClick={all} disabled={same(all)}>All</button>
+         <button type="button" onClick={current} disabled={same(current)}>Current</button>
+         <button type="button" onClick={done} disabled={same(done)}>Done</button>
       </footer>
-   )
-}
-
-function Button ({ text, onClick, disabled }) {
-   const status = disabled ? 'disabled' : null
-
-   return (
-      <button type="button" onClick={onClick} disabled={status}>{text}</button>
    )
 }
 
