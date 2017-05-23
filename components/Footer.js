@@ -24,6 +24,19 @@ function Footer({ all, current, done, clear, view, zero_done_todos }) {
    )
 }
 
+function FooterButton({ message, onClick, view, todos }) {
+   return (
+      <button type="button" onClick={onClick} disabled={false}>{message}</button>
+   )
+}
+
+const arrayOfFunctions = [
+   `all`,
+   `current`,
+   `done`,
+   `clear`,
+]
+
 // -----------------------------------------------------------------------------
 // React Typing
 
