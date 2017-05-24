@@ -30,13 +30,6 @@ function FooterButton({ message, onClick, view, todos }) {
    )
 }
 
-const arrayOfFunctions = [
-   `all`,
-   `current`,
-   `done`,
-   `clear`,
-]
-
 // -----------------------------------------------------------------------------
 // React Typing
 
