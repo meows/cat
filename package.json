@@ -17,6 +17,7 @@
    "devDependencies": {
       "@types/react": "^15.0.1",
       "@types/react-dom": "*",
+      "@types/react-redux": "*",
       "@types/redux": "*"
    }
 }
