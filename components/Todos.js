@@ -15,24 +15,17 @@ const Todos = ({ todos }) => (
 )
 
 // -----------------------------------------------------------------------------
-// React Typing
-
-Todo.PropTypes = {
-   todo    : PropTypes.object.isRequired,
-   onClick : PropTypes.func.isRequired,
-}
+// Types
 
 Todos.PropTypes = {
-   todos   : PropTypes.array.isRequired,
-   onClick : PropTypes.func.isRequired,
+   todos: PropTypes.array.isRequired,
 }
 
 // -----------------------------------------------------------------------------
 // Connection
 
-const mapState = ({ todos, view }) => ({
+const mapState = ({ todos, view}) => ({
    todos: Derive.todoVisibility(todos, view),
-   view,
 })
 
 const Connected = connect(mapState)(Todos)
