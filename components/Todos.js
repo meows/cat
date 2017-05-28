@@ -8,19 +8,20 @@ import Action from '../state/actions'
 // -----------------------------------------------------------------------------
 // Components
 
-function Todo({ todo, onClick }) {
+function Todo({ todo, onToggle, onDelete }) {
    return (
       <li className='Todo'>
          {todo.task} {todo.done ?  ' (done) ' : null}
-         <button type="button" onClick={() => onClick(todo.id)}>Toggle</button>
+         <button type="button" onClick={onToggle(todo.id)}>Toggle</button>
+         <button type="button" onClick={onDelete(todo.id)}>Delete</button>
       </li>
    )
 }
 
-function Todos({ todos, onClick }) {
+function Todos({ todos, onToggle, onDelete }) {
    return (
       <ul id='Todos'>
-         { todos.map((todo, index) => <Todo todo={todo} onClick={onClick} key={index} />) }
+         { todos.map((todo, index) => <Todo todo={todo} onToggle={onToggle} onDelete={onDelete} key={index} />) }
       </ul>
    )
 }
@@ -47,7 +48,8 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-   onClick: (id) => dispatch(Action.todoToggle(id)),
+   onToggle: (id) => () => dispatch(Action.todoToggle(id)),
+   onDelete: (id) => () => dispatch(Action.todoDelete(id)),
 })
 
 const Connected = connect(mapState, mapDispatch)(Todos)
