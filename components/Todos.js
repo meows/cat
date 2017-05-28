@@ -24,7 +24,7 @@ Todos.PropTypes = {
 // -----------------------------------------------------------------------------
 // Connection
 
-const mapState = ({ todos, view}) => ({
+const mapState = ({ todos, view }) => ({
    todos: Derive.todoVisibility(todos, view),
 })
 
