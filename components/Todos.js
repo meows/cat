@@ -3,22 +3,14 @@ import PropTypes   from 'prop-types'
 import { connect } from 'react-redux'
 
 import Derive from '../state/derive'
-import Action from '../state/actions'
+import Todo   from './Todo'
 
 // -----------------------------------------------------------------------------
-// Components
+// Component
 
-const Todo = ({ todo, onToggle, onDelete }) => (
-   <li className='Todo'>
-      {todo.task} {todo.done ?  ' (done) ' : null}
-      <button type="button" onClick={onToggle(todo.id)}>Toggle</button>
-      <button type="button" onClick={onDelete(todo.id)}>Delete</button>
-   </li>
-)
-
-const Todos = ({ todos, onToggle, onDelete }) => (
+const Todos = ({ todos }) => (
    <ul id='Todos'>
-      { todos.map((todo, index) => <Todo todo={todo} onToggle={onToggle} onDelete={onDelete} key={index} />) }
+      { todos.map((todo, index) => <Todo todo={todo} key={index} />) }
    </ul>
 )
 
@@ -43,11 +35,6 @@ const mapState = ({ todos, view }) => ({
    view,
 })
 
-const mapDispatch = (dispatch) => ({
-   onToggle: (id) => () => dispatch(Action.todoToggle(id)),
-   onDelete: (id) => () => dispatch(Action.todoDelete(id)),
-})
-
-const Connected = connect(mapState, mapDispatch)(Todos)
+const Connected = connect(mapState)(Todos)
 
 export default Connected
