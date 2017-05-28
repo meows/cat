@@ -8,23 +8,19 @@ import Action from '../state/actions'
 // -----------------------------------------------------------------------------
 // Components
 
-function Todo({ todo, onToggle, onDelete }) {
-   return (
-      <li className='Todo'>
-         {todo.task} {todo.done ?  ' (done) ' : null}
-         <button type="button" onClick={onToggle(todo.id)}>Toggle</button>
-         <button type="button" onClick={onDelete(todo.id)}>Delete</button>
-      </li>
-   )
-}
+const Todo = ({ todo, onToggle, onDelete }) => (
+   <li className='Todo'>
+      {todo.task} {todo.done ?  ' (done) ' : null}
+      <button type="button" onClick={onToggle(todo.id)}>Toggle</button>
+      <button type="button" onClick={onDelete(todo.id)}>Delete</button>
+   </li>
+)
 
-function Todos({ todos, onToggle, onDelete }) {
-   return (
-      <ul id='Todos'>
-         { todos.map((todo, index) => <Todo todo={todo} onToggle={onToggle} onDelete={onDelete} key={index} />) }
-      </ul>
-   )
-}
+const Todos = ({ todos, onToggle, onDelete }) => (
+   <ul id='Todos'>
+      { todos.map((todo, index) => <Todo todo={todo} onToggle={onToggle} onDelete={onDelete} key={index} />) }
+   </ul>
+)
 
 // -----------------------------------------------------------------------------
 // React Typing
@@ -42,9 +38,9 @@ Todos.PropTypes = {
 // -----------------------------------------------------------------------------
 // Connection
 
-const mapState = (state) => ({
-   todos : Derive.todoVisibility(state.todos, state.view),
-   view  : state.view,
+const mapState = ({ todos, view }) => ({
+   todos: Derive.todoVisibility(todos, view),
+   view,
 })
 
 const mapDispatch = (dispatch) => ({
