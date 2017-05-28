@@ -15,14 +15,14 @@ class Input extends React.Component {
    render() {
       return (
          <div>
-            <input value={this.state.input} onChange={this.update} />
+            <input value={this.state.input} onChange={this.update} name="todo_add" />
             <button type="button" onClick={this.submit}>Submit</button>
          </div>
       )
    }
 
    update = (event) => this.setState({
-      input: event.target.value,
+      [event.target.name]: event.target.value,
    })
 
    submit = () => {
