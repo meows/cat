@@ -8,14 +8,14 @@ import A           from '../state/actions'
 
 class Input extends React.Component {
    state   = { input: '' }
-   onClick = this.props.onClick
+   todoAdd = this.props.todoAdd
 
    constructor(props) { super(props) }
 
    render() {
       return (
          <div>
-            <input value={this.state.input} onChange={this.update} name="todo_add" />
+            <input value={this.state.input} onChange={this.update} name="input" />
             <button type="button" onClick={this.submit}>Submit</button>
          </div>
       )
@@ -29,7 +29,7 @@ class Input extends React.Component {
       const task = this.state.input
       if (task.length === 0) { return }
 
-      this.onClick(task)
+      this.todoAdd(task)
       this.setState({ input: '' })
    }
 }
@@ -45,7 +45,7 @@ Input.PropTypes = {
 // Connection
 
 const mapDispatch = (dispatch) => ({
-   onClick: (task) => dispatch(A.todoAdd(task))
+   todoAdd: (task) => dispatch(A.todoAdd(task))
 })
 
 const Connection = connect(null, mapDispatch)(Input)
