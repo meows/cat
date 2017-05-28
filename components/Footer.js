@@ -31,17 +31,7 @@ function FooterButton({ message, onClick, view, todos }) {
 }
 
 // -----------------------------------------------------------------------------
-// React Typing
-
-Footer.PropTypes = {
-   all     : PropTypes.func.isRequired,
-   current : PropTypes.func.isRequired,
-   done    : PropTypes.func.isRequired,
-   view    : PropTypes.string.isRequired,
-}
-
-// -----------------------------------------------------------------------------
-// Store Connection
+// Connection
 
 const mapProps = (state) => ({
    view: D.footerVisibility(state.view),

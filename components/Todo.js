@@ -7,7 +7,7 @@ import A           from '../state/actions'
 // Component
 
 const Todo = ({ todo, onToggle, onDelete }) => (
-   <li className='Todo'>
+   <li className="Todo">
       {todo.task} {todo.done ?  ' (done) ' : null}
       <button type="button" onClick={onToggle(todo.id)}>Toggle</button>
       <button type="button" onClick={onDelete(todo.id)}>Delete</button>
@@ -15,7 +15,7 @@ const Todo = ({ todo, onToggle, onDelete }) => (
 )
 
 // -----------------------------------------------------------------------------
-// Types
+// Type
 
 Todo.PropTypes = {
    todo     : PropTypes.object.isRequired,   // received from parent

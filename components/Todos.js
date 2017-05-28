@@ -15,7 +15,7 @@ const Todos = ({ todos }) => (
 )
 
 // -----------------------------------------------------------------------------
-// Types
+// Type
 
 Todos.PropTypes = {
    todos: PropTypes.array.isRequired,

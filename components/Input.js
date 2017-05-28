@@ -35,7 +35,7 @@ class Input extends React.Component {
 }
 
 // ----------------------------------------------------------------------------
-// React Typing
+// Type
 
 Input.PropTypes = {
    onClick: PropTypes.func.isRequired,
