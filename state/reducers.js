@@ -13,13 +13,13 @@ function viewReducer(state = T.VIEW_CURRENT, action) {
    }
 }
 
-function todoToggle(todo) {
-   return Object.assign(
-      Object.create(null),
-      todo,
-      { done: !todo.done },
-   )
-}
+const flipProperty = (property) => (object) => Object.assign(
+   {},
+   object,
+   { [property]: !object[property] },
+)
+
+const todoToggle = flipProperty('done')
 
 function todosReducer(state = [], action) {
    switch (action.type) {
