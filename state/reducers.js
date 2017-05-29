@@ -23,9 +23,9 @@ const todoToggle = flipProperty('done')
 
 function todosReducer(state = [], action) {
    switch (action.type) {
-      case T.TODO_ADD    : return state.concat(action.data)
-      case T.TODO_DELETE : return state.filter(todo => todo.id !== action.data)
-      case T.TODO_TOGGLE : return state.map(todo => action.data === todo.id ? todoToggle(todo) : todo)
+      case T.TODO_ADD    : return state.concat(action.bookmark)
+      case T.TODO_DELETE : return state.filter(todo => todo.id !== action.id)
+      case T.TODO_TOGGLE : return state.map(todo =>  todo.id === action.id ? todoToggle(todo) : todo)
       case T.TODO_CLEAR  : return state.filter(todo => !todo.done)
       default            : return state
    }

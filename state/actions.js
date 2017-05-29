@@ -6,7 +6,7 @@ import T from './types'
 class Actions {
    static todoAdd = (task) => ({
       type: T.TODO_ADD,
-      data: {
+      todo: {
          task : task,
          id   : new Date().getTime(),
          done : false,
@@ -15,38 +15,22 @@ class Actions {
 
    static todoDelete = (id) => ({
       type: T.TODO_DELETE,
-      data: id,
+      id,
    })
 
    static todoToggle = (id) => ({
       type: T.TODO_TOGGLE,
-      data: id,
+      id,
    })
 
-   static todoClear = () => ({
-      type: T.TODO_CLEAR,
-      data: null,
-   })
+   static todoClear = () => ({ type: T.TODO_CLEAR })
 
    static goSee = (view) => {
       switch (view) {
-         case T.VIEW_CURRENT:
-            return {
-               type: T.VIEW_CURRENT,
-               data: null,
-            }
-         case T.VIEW_DONE:
-            return {
-               type: T.VIEW_DONE,
-               data: null,
-            }
-         case T.VIEW_ALL:
-            return {
-               type: T.VIEW_ALL,
-               data: null,
-            }
-         default:
-            throw new TypeError(`goSee() received: ${view}`)
+         case T.VIEW_CURRENT : return { type: T.VIEW_CURRENT }
+         case T.VIEW_DONE    : return { type: T.VIEW_DONE }
+         case T.VIEW_ALL     : return { type: T.VIEW_ALL }
+         default             : throw new TypeError(`goSee() received: ${view}`)
       }
    }
 }
