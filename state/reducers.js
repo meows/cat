@@ -22,13 +22,13 @@ const flipProperty = (property) => (object) => Object.assign(
    { [property]: !object[property] },
 )
 
-const todoToggle = flipProperty('done')
+const todoFlip = flipProperty('done')
 
 function todosReducer(state = [], action) {
    switch (action.type) {
       case T.TODO_ADD    : return state.concat(action.todo)
       case T.TODO_DELETE : return state.filter(todo => todo.id !== action.id)
-      case T.TODO_TOGGLE : return state.map(todo => todo.id === action.id ? todoToggle(todo) : todo)
+      case T.TODO_TOGGLE : return state.map(todo => todo.id === action.id ? todoFlip(todo) : todo)
       case T.TODO_CLEAR  : return state.filter(todo => !todo.done)
       default            : return state
    }

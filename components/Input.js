@@ -1,5 +1,4 @@
 import React       from 'react'
-import PropTypes   from 'prop-types'
 import { connect } from 'react-redux'
 import A           from '../state/actions'
 
@@ -28,17 +27,9 @@ class Input extends React.Component {
    submit = () => {
       const task = this.state.input
       if (task.length === 0) { return }
-
       this.todoAdd(task)
       this.setState({ input: '' })
    }
-}
-
-// ----------------------------------------------------------------------------
-// Type
-
-Input.PropTypes = {
-   onClick: PropTypes.func.isRequired,
 }
 
 // -----------------------------------------------------------------------------

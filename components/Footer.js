@@ -8,7 +8,7 @@ import D           from '../state/derive'
 // -----------------------------------------------------------------------------
 // Components
 
-function Footer({ all, current, done, clear, view, zero_done_todos }) {
+function Footer({ all, current, done, clear, view, all_done }) {
    const same = (fn) => fn.name === view
    const clearButton = <button type="button" onClick={clear} disabled={same(clear)}>Clear</button>
 
@@ -18,7 +18,7 @@ function Footer({ all, current, done, clear, view, zero_done_todos }) {
          <button type="button" onClick={current} disabled={same(current)}>Current</button>
          <button type="button" onClick={done}    disabled={same(done)}>Done</button>
          {
-            zero_done_todos && view === 'done' ? clearButton : null
+            all_done && view === 'done' ? clearButton : null
          }
       </footer>
    )
@@ -29,7 +29,7 @@ function Footer({ all, current, done, clear, view, zero_done_todos }) {
 
 const mapProps = (state) => ({
    view: D.footerVisibility(state.view),
-   zero_done_todos: state.todos.filter(todo => todo.done).length !== 0
+   all_done: state.todos.filter(todo => todo.done).length !== 0
 })
 
 const mapDispatch = (dispatch) => ({

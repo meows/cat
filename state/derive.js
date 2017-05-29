@@ -12,6 +12,7 @@ class Derive {
          default             : new TypeError(`Derive.todos() received wrong input: `, todos, view)
       }
    }
+
    static footerVisibility(view) {
       switch (view) {
          case T.VIEW_ALL     : return 'all'
@@ -20,6 +21,14 @@ class Derive {
          default             : new TypeError(`Derive.footer() received wrong input: `, view)
       }
    }
+
+   static viewToText = {
+      [T.VIEW_ALL]: 'all',
+      [T.VIEW_CURRENT]: 'current',
+      [T.VIEW_DONE]: 'done',
+   }
 }
+
+
 
 export default Derive
