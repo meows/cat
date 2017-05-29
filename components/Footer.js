@@ -9,7 +9,7 @@ import D           from '../state/derive'
 // Components
 
 function Footer({ all, current, done, clear, view, zero_done_todos }) {
-   const same = (fn) => view === fn.name ? true : false
+   const same = (fn) => fn.name === view
    const clearButton = <button type="button" onClick={clear} disabled={same(clear)}>Clear</button>
 
    return (
