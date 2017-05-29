@@ -5,8 +5,8 @@ import T from './types'
 
 class Actions {
    static todoAdd = (task) => ({
-      type: T.TODO_ADD,
-      todo: {
+      type : T.TODO_ADD,
+      todo : {
          task : task,
          id   : new Date().getTime(),
          done : false,
