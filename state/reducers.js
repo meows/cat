@@ -2,7 +2,7 @@ import T from './types'
 import { combineReducers } from 'redux'
 
 // -----------------------------------------------------------------------------
-// Reducers
+// View Reducer
 
 function viewReducer(state = T.VIEW_CURRENT, action) {
    switch (action.type) {
@@ -12,6 +12,9 @@ function viewReducer(state = T.VIEW_CURRENT, action) {
       default             : return state
    }
 }
+
+// -----------------------------------------------------------------------------
+// Todos Reducer
 
 const flipProperty = (property) => (object) => Object.assign(
    {},
@@ -30,6 +33,9 @@ function todosReducer(state = [], action) {
       default            : return state
    }
 }
+
+// -----------------------------------------------------------------------------
+// Export
 
 const reducers = combineReducers({
    view  : viewReducer,
