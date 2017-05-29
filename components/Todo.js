@@ -18,7 +18,7 @@ const Todo = ({ todo, onToggle, onDelete }) => (
 // Type
 
 Todo.PropTypes = {
-   todo     : PropTypes.object.isRequired,   // received from parent
+   todo     : PropTypes.object.isRequired,
    onToggle : PropTypes.func.isRequired,
    onDelete : PropTypes.func.isRequired,
 }

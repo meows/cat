@@ -1,8 +1,8 @@
 import React       from 'react'
+import { connect } from 'react-redux'
+
 import T           from '../state/types'
 import A           from '../state/actions'
-import { connect } from 'react-redux'
-import PropTypes   from 'prop-types'
 import D           from '../state/derive'
 
 // -----------------------------------------------------------------------------
@@ -21,12 +21,6 @@ function Footer({ all, current, done, clear, view, zero_done_todos }) {
             zero_done_todos && view === 'done' ? clearButton : null
          }
       </footer>
-   )
-}
-
-function FooterButton({ message, onClick, view, todos }) {
-   return (
-      <button type="button" onClick={onClick} disabled={false}>{message}</button>
    )
 }
 
