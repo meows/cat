@@ -8,14 +8,13 @@
    },
    "dependencies": {
       "next": "latest",
-      "prop-types": "^15.5.10",
-      "react": "^15.5.4",
-      "react-dom": "^15.5.4",
-      "react-redux": "^5.0.4",
+      "react": "*",
+      "react-dom": "*",
+      "react-redux": "*",
       "redux": "*"
    },
    "devDependencies": {
-      "@types/react": "^15.0.1",
+      "@types/react": "*",
       "@types/react-dom": "*",
       "@types/react-redux": "*",
       "@types/redux": "*"
