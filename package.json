@@ -8,6 +8,7 @@
    },
    "dependencies": {
       "next": "latest",
+      "prop-types": "^15.5.10",
       "react": "*",
       "react-dom": "*",
       "react-redux": "*",

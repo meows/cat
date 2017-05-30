@@ -1,6 +1,7 @@
 import React       from 'react'
 import { connect } from 'react-redux'
 import A           from '../state/actions'
+import Button       from './Button'
 
 // -----------------------------------------------------------------------------
 // Component
@@ -17,7 +18,7 @@ class Input extends React.Component {
       return (
          <div>
             <input value={this.state.input} onChange={this.update} name="input" />
-            <button type="button" onClick={this.submit}>submit</button>
+            <Button text="submit" onClick={this.submit} />
          </div>
       )
    }
