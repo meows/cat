@@ -1,6 +1,5 @@
 import React       from 'react'
 import { connect } from 'react-redux'
-import PropTypes   from 'prop-types'
 import A           from '../state/actions'
 
 // -----------------------------------------------------------------------------
@@ -13,15 +12,6 @@ const Todo = ({ todo, onToggle, onDelete }) => (
       <button type="button" onClick={onDelete(todo.id)}>Delete</button>
    </li>
 )
-
-// -----------------------------------------------------------------------------
-// Type
-
-Todo.PropTypes = {
-   todo     : PropTypes.object.isRequired,
-   onToggle : PropTypes.func.isRequired,
-   onDelete : PropTypes.func.isRequired,
-}
 
 // -----------------------------------------------------------------------------
 // Connection

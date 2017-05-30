@@ -4,7 +4,7 @@ import { combineReducers } from 'redux'
 // -----------------------------------------------------------------------------
 // View Reducer
 
-function viewReducer(state = T.VIEW_CURRENT, action) {
+function viewReducer(state = T.VIEW_ALL, action) {
    switch (action.type) {
       case T.VIEW_CURRENT : return T.VIEW_CURRENT
       case T.VIEW_DONE    : return T.VIEW_DONE

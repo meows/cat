@@ -8,15 +8,19 @@ import D           from '../state/derive'
 // -----------------------------------------------------------------------------
 // Components
 
+const Button = ({ text, disabled, onClick }) => (
+   <button type="button" onClick={onClick} disabled={disabled}>{text}</button>
+)
+
 function Footer({ all, current, done, clear, view, all_done }) {
    const same = (fn) => fn.name === view
-   const clearButton = <button type="button" onClick={clear} disabled={same(clear)}>Clear</button>
+   const clearButton = <Button onClick={clear} disabled={same(clear)} />
 
    return (
       <footer>
-         <button type="button" onClick={all}     disabled={same(all)}>All</button>
-         <button type="button" onClick={current} disabled={same(current)}>Current</button>
-         <button type="button" onClick={done}    disabled={same(done)}>Done</button>
+         <Button text="all"     onClick={all}     disabled={same(all)} />
+         <Button text="current" onClick={current} disabled={same(current)} />
+         <Button text="done"    onClick={done}    disabled={same(done)} />
          {
             all_done && view === 'done' ? clearButton : null
          }
