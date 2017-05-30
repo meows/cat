@@ -29,8 +29,8 @@ function Footer({ all, current, done, clear, view, all_done }) {
 // Connection
 
 const mapProps = (state) => ({
-   view: D.footerVisibility(state.view),
-   all_done: state.todos.filter(todo => todo.done).length !== 0
+   view     : D.footerVisibility(state.view),
+   all_done : state.todos.filter(todo => todo.done).length !== 0,
 })
 
 const mapDispatch = (dispatch) => ({
