@@ -11,7 +11,7 @@ import Button      from './Button'
 
 function Footer({ all, current, done, clear, view, all_done }) {
    const same = (fn) => fn.name === view
-   const clearButton = <Button onClick={clear} disabled={same(clear)} />
+   const clearButton = <Button text="clear" onClick={clear} disabled={same(clear)} />
 
    return (
       <footer>
