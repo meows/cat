@@ -4,13 +4,10 @@ import { connect } from 'react-redux'
 import T           from '../state/types'
 import A           from '../state/actions'
 import D           from '../state/derive'
+import Button      from './Button'
 
 // -----------------------------------------------------------------------------
 // Components
-
-const Button = ({ text, disabled, onClick }) => (
-   <button type="button" onClick={onClick} disabled={disabled}>{text}</button>
-)
 
 function Footer({ all, current, done, clear, view, all_done }) {
    const same = (fn) => fn.name === view
