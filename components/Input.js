@@ -6,10 +6,12 @@ import A           from '../state/actions'
 // Component
 
 class Input extends React.Component {
-   state   = { input: '' }
-   todoAdd = this.props.todoAdd
+   constructor(props) {
+      super(props)
 
-   constructor(props) { super(props) }
+      this.state   = { input: '' }
+      this.todoAdd = this.props.todoAdd
+   }
 
    render() {
       return (
