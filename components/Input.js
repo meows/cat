@@ -15,19 +15,25 @@ class Input extends React.Component {
    }
 
    render() {
+      const {
+         state: { input },
+         onUpdate,
+         onSubmit,
+      } = this
+
       return (
          <div>
-            <input value={this.state.input} onChange={this.update} name="input" />
-            <Button text="submit" onClick={this.submit} />
+            <input value={input} onChange={onUpdate} name="input" />
+            <Button text="submit" onClick={onSubmit} />
          </div>
       )
    }
 
-   update = (event) => this.setState({
+   onUpdate = (event) => this.setState({
       [event.target.name]: event.target.value,
    })
 
-   submit = () => {
+   onSubmit = () => {
       const task = this.state.input
       if (task.length === 0) { return }
       this.todoAdd(task)
